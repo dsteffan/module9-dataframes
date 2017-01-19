@@ -1,23 +1,35 @@
 # Exercise 6: Husky Football 2015 Season
 # Read in the Husky Football 2015 game data into a variable called `husky.games.2015`
 
+getwd()
+setwd("Q:/info201/modules/module9-dataframes/exercise-6/data/")
+
+getwd()
+
+husky.games.2015 <- read.csv('huskies_2015.csv', stringsAsFactors = FALSE)
 
 
 # Create a vector of the teams that the Huskies played against during that season
 
+colnames(husky.games.2015)
+rownames(husky.games.2015)
 
+opponenets <- husky.games.2015$opponent
 
 # Create a vector of the their final scores for the games
 # Call this variable `husky.scores`
 
-
+husky.scores <-husky.games.2015$uw_score
 
 # Create 2 variables called `rushing.yards` and `passing.yards` to represent the yards the Huskies rushed and passed
 
+rushing.yards <- husky.games.2015$rushing_yards
+passing.yards <- husky.games.2015$passing_yards
 
 
 # Create a variable called `combined.yards` that is the total yardage of the Huskies for each game
 
+combined.yards <- rushing.yards + passing.yards
 
 
 # Add the `combined.yards` vector to the dataframe with the column name being `combined`
